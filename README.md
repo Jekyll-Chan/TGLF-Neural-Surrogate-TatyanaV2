@@ -2,15 +2,12 @@
 
 > A neural network surrogate for TGLF-like linear stability — **0.44% median error on γ, 0.50% on ω.**
 
-Built as part of an ongoing surrogate modelling effort for tokamak turbulent transport. The idea is straightforward: train a small residual network to replicate what TGLF's linear solver does, but orders of magnitude faster 🚀🚀🚀
-
-The results came out better than expected.
-
+Built as part of an ongoing surrogate modelling effort for tokamak turbulent transport, this Neural Surrogate (I just named Tatyana) learns the mapping from local plasma equilibrium parameters directly to nonlinear GENE outputs, capturing physics that quasilinear models like TGLF approximate away 🎯🎯🎯
 ---
 
 ## Results
 
-Trained on GENE high-fidelity scan data (including runs from NSCC Singapore), evaluated on a held-out test split stratified across all sources.
+Trained on GENE high-fidelity scan data (runs from NSCC Singapore by NTU Plasma Theory Group), evaluated on a held-out test split stratified across all sources.
 
 <p align="center">
   <img src="images/tatyana_v2_full_benchmark.png" width="92%">
@@ -79,11 +76,12 @@ gamma, omega = predict(model, sx, sy, X).T
 
 ## Bring your own data
 
-This repo contains the training framework only. The dataset is not distributed here as it comes from our group's gyrokinetic simulation runs on NSCC Singapore. If you have TGLF linear scan outputs in a compatible format and want to retrain or adapt this, feel free to open an issue or reach out directly! 🫡
+This repo contains the training framework only. The dataset is not distributed here as it comes from our group's gyrokinetic simulation runs on NSCC Singapore. If you have high-fidelity scan outputs in a compatible format and want to retrain or adapt this, feel free to open an issue or reach out directly! 🫡
 
 Your TSV needs at minimum: `kymin trpeps shat q0 omt_i omt_e omn gamma omega is_unstable source`
 
 ---
 
 *Author: Tingyi Chen*
-*Email: flyawaypencil480@gmail*
+
+*Email: flyawaypencil480@gmail.com*
