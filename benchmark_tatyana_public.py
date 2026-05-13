@@ -4,7 +4,7 @@ Tatyana V2 — Public Benchmark
 Two modes available for your tryout ~
 
   1) Parameter scan only (default, no data required)
-     Sweeps each TGLF input over physically motivated ranges
+     Sweeps each input over physically motivated ranges
      around a CBC-like base case and plots predicted γ / ω.
 
   2) Accuracy benchmark  (--data <file.tsv>)
@@ -149,14 +149,14 @@ def run_accuracy(model, sx, sy, tsv_path: str):
     g_med  = df["gamma_relerr"].median() * 100
     w_med  = df["omega_relerr"].median() * 100
 
-    print("\n── Overall accuracy ───────────────────────────────────────────")
+    print("\n── Overall accuracy ")
     print(f"  N samples : {len(df)}")
     print(f"  γ  RMSE   : {g_rmse:.5f}    Median rel. err: {g_med:.3f}%")
     print(f"  ω  RMSE   : {w_rmse:.5f}    Median rel. err: {w_med:.3f}%")
 
     # Per-source breakdown if column present!
     if "source" in df.columns:
-        print("\n── Per-source ─────────────────────────────────────────────────")
+        print("\n── Per-source ")
         print(f"{'Source':<30} {'N':>6}  {'γ MedRel%':>10}  {'ω MedRel%':>10}")
         print("-" * 62)
         for src, grp in df.groupby("source"):
