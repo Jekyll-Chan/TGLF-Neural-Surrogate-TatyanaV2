@@ -7,7 +7,7 @@ Built as part of an ongoing surrogate modelling effort for tokamak turbulent tra
 
 ## Results
 
-Trained on GENE high-fidelity scan data (runs from NSCC Singapore by NTU Plasma Theory Group), evaluated on a held-out test split stratified across all sources.
+Trained on GENE high-fidelity linear scan data (runs from NSCC Singapore by NTU Plasma Theory Group), evaluated on a held-out test split stratified across all sources.
 
 <p align="center">
   <img src="images/tatyana_v2_full_benchmark.png" width="92%">
@@ -76,7 +76,7 @@ gamma, omega = predict(model, sx, sy, X).T
 
 ## Bring your own data
 
-This repo contains the training framework only. The dataset is not distributed here as it comes from our group's gyrokinetic simulation runs on NSCC Singapore. If you have high-fidelity scan outputs in a compatible format and want to retrain or adapt this, feel free to open an issue or reach out directly! 🫡
+This repo contains the training framework only. The dataset and trained neural surrogate are not distributed here as it comes from our group's gyrokinetic simulation runs on NSCC Singapore. If you have high-fidelity scan outputs in a compatible format and want to retrain or adapt this, feel free to open an issue or reach out directly! 🫡
 
 Your TSV needs at minimum: `kymin trpeps shat q0 omt_i omt_e omn gamma omega is_unstable source`
 
